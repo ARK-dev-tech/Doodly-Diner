@@ -1,0 +1,79 @@
+ /* Custom Doodly Styling */
+ :root {
+     --primary-color: #f97316;
+     /*Orange-500 */
+     --text-color: #1f2937;
+     /*Gray-800 */
+     --paper-color: #fcfcf4;
+     /*paper color*/
+     --line-color: #a8a8a8;
+     /*light gray for the lines*/
+
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     color: var(--text-color);
+ }
+
+ .doodle-title {
+     font-family: 'Caveat', cursive;
+     text-shadow: 3px 3px 0 #fee2e2;
+     /*Light red shadow*/
+ }
+
+ .doodle-bg {
+     /*Maybe I remove this, creating noise*/
+     background-color: var(--paper-color);
+     background-image: repeating-linear-gradient(0deg,
+             /*0 Degree is Horizontal Lines*/
+             var(--line-color),
+             var(--line-color) 1px,
+             var(--paper-color) 1px,
+             var(--paper-color) 30px);
+
+     background-position-y: -280px; /*Pushing the lines up as something else is pushing it down*/
+ }
+
+ /*hand-drawn look for cards and buttons, going for a shadow that reduces on hover*/
+ .doodly-border {
+     border: 3px solid var(--text-color);
+     border-radius: 25px 55px 20px 45px / 35px 30px 50px 15px;
+     box-shadow: 8px 8px 0px 0px var(--primary-color);
+     transition: all 0.2s ease-out;
+ }
+
+ .doodly-border:hover {
+     box-shadow: 4px 4px 0px 0px var(--primary-color);
+     transform: translate(4px, 4px);
+ }
+
+ /*Animation*/
+ @keyframes wiggle {
+     0%,
+     100% {
+         transform: rotate(0deg);
+     }
+     25% {
+         transform: rotate(-1.5deg);
+     }
+     75% {
+         transform: rotate(1.5deg);
+     }
+ }
+
+ .wiggle-on-hover:hover {
+     animation: wiggle 0.3s ease-in-out infinite;
+ }
+
+ /*Slide-in animation on scroll (triggered by main.js)*/
+ .slide-in-up {
+     opacity: 0;
+     transform: translateY(40px);
+     transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ }
+
+ .slide-in-up.visible {
+     opacity: 1;
+     transform: translateY(0);
+ }

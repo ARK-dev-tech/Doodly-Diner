@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Doodly Diner</title>
+    <!--CSS Link-->
+    <link rel="stylesheet" href="style.css">
+    <!--Tailwind CSS CDN here-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body class="doodle-bg min-h-screen">
+
+    <!--Main Header-->
+    <header class="p-4 md:p-6 sticky top-0 bg-paper-color/95 backdrop-blur-sm z-10 border-b-2 border-gray-800">
+        <div class="container mx-auto flex justify-between items-center max-w-5xl">
+            <h1 class="text-4xl doodle-title text-gray-800">Doodly Diner</h1>
+            <nav class="space-x-4 hidden sm:block">
+                <a href="#menu" class="text-lg font-bold hover:text-orange-500 transition duration-150">Menu</a>
+                <a href="#about" class="text-lg font-bold hover:text-orange-500 transition duration-150">About Us</a>
+                <a href="#contact" class="text-lg font-bold hover:text-orange-500 transition duration-150">Contact</a>
+            </nav>
+            <button class="sm:hidden text-2xl" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+    
+    <!--Mobile Menu (This is hidden by Default)-->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900/90 z-20 flex flex-col items-center justify-center">
+        <button class="absolute top-4 right-4 text-white text-3xl" id="close-menu-btn">x</button>
+        <nav class="space-y-6 text-center">
+            <a href="#menu" class="text-4xl doodle-title text-white block hover:text-orange-500 transition duration-150" onclick="closeMenu()">Menu</a>
+            <a href="#about" class="text-4xl doodle-title text-white block hover:text-orange-500 transition duration-150" onclick="closeMenu()">About Us</a>
+            <a href="#contact" class="text-4xl doodle-title text-white block hover:text-orange-500 transition duration-150" onclick="closeMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <!--Hero Section-->
+        <section class="text-center py-16 md:py-24 mb-16 slide-in-up">
+            <p class="text-xl md:text-2xl mb-4 font-bold text-orange-500">Welcome to the happiest place on a plate!</p>
+            <h2 class="text-6xl md:text-8xl doodle-title mb-8 leading-tight">
+                Hand-Drawn Tastes.<br>
+                Real-Life Flavour.
+            </h2>
+            <a href="#menu" class="inline-block px-8 py-4 bg-orange-500 text-white text-xl font-bold uppercase doodly-border wiggle-on-hover shadow-lg hover:shadow-xl hover:bg-orange-600 transition duration-200">
+                See Our Latest Scribbles!
+            </a>
+        </section>
+
+        <!--Menu Section-->
+        <section id="menu" class="mb-20">
+            <h2 class="text-5xl md:text-6xl doodle-title text-center mb-12 slide-in-up">The Sketchbook of Eats</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!--Menu Item 1: Doodle Burger-->
+                <div class="p-6 bg-white doodly-border slide-in-up delay-1">
+                    <h3 class="text-3xl font-bold mb-2 text-orange-500 doodle-title">The Masterpiece Burger</h3>
+                    <p class="text-gray-600 mb-4">A towering stack of locally-sourced beef, melted cheddar, crispy onions, and our secret "ink" sauce. Comes with a side of perfectly drawn fries.</p>
+                    <span class="text-2xl font-extrabold">$14.99</span>
+                </div>
+
+                <!--Menu Item 2: Scribble Salad-->
+                <div class="p-6 bg-white doodly-border slide-in-up delay-2">
+                    <h3 class="text-3xl font-bold mb-2 text-orange-500 doodle-title">The Scribble Salad</h3>
+                    <p class="text-gray-600 mb-4">A fresh mix of greens, vibrant cherry tomatoes, feta crumbles, and a light balsamic vinaigrette. So healthy, it's almost a lie.</p>
+                    <span class="text-2xl font-extrabold">$11.50</span>
+                </div>
+
+                <!--Menu Item 3: Ink Pasta-->
+                <div class="p-6 bg-white doodly-border slide-in-up delay-3">
+                    <h3 class="text-3xl font-bold mb-2 text-orange-500 doodle-title">Squiggle Ink Pasta</h3>
+                    <p class="text-gray-600 mb-4">Homemade squid-ink spaghetti tossed in a creamy garlic sauce with shrimp and basil. Dark, mysterious, and delicious.</p>
+                    <span class="text-2xl font-extrabold">$17.99</span>
+                </div>
+                
+                <!--Menu Item 4: Pencil Cake-->
+                <div class="p-6 bg-white doodly-border slide-in-up delay-4">
+                    <h3 class="text-3xl font-bold mb-2 text-orange-500 doodle-title">The Eraser Cake</h3>
+                    <p class="text-gray-600 mb-4">Our famous vanilla bean sponge cake, layered with raspberry jam and topped with a dusting of "pencil shaving" coconut flakes.</p>
+                    <span class="text-2xl font-extrabold">$7.00</span>
+                </div>
+            </div>
+        </section>
+        
+        <!--About Section-->
+        <section id="about" class="text-center py-12 mb-20 slide-in-up">
+            <h2 class="text-5xl md:text-6xl doodle-title mb-8">Drawn From Passion</h2>
+            <div class="max-w-3xl mx-auto p-8 bg-white doodly-border text-lg leading-relaxed">
+                <p class="mb-4">The Doodly Diner was founded on the simple idea that food should be fun, fresh, and slightly imperfect—just like a good doodle. We believe in scratch-made recipes, locally sourced ingredients, and a dining experience that lets you relax and be creative.</p>
+                <p>Every plate is a canvas, and every meal is a small, edible work of art. Come see what we've sketched up today!</p>
+            </div>
+        </section>
+
+        <!--Contact Section-->
+        <section id="contact" class="py-12 mb-16 slide-in-up">
+            <h2 class="text-5xl md:text-6xl doodle-title text-center mb-8">Find Our Spot!</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-yellow-100 doodly-border slide-in-up delay-1">
+                    <h3 class="text-3xl font-bold mb-2 text-gray-800">Location</h3>
+                    <p>123 Sketchpad Lane, Creative City, CA 90210</p>
+                    <a href="#" class="text-orange-500 underline font-bold">Get Directions (If only!)</a>
+                </div>
+                <div class="p-6 bg-yellow-100 doodly-border slide-in-up delay-2">
+                    <h3 class="text-3xl font-bold mb-2 text-gray-800">Hours</h3>
+                    <p>Mon - Fri: 11:00 AM - 9:00 PM</p>
+                    <p>Sat - Sun: 10:00 AM - 10:00 PM</p>
+                </div>
+                <div class="p-6 bg-yellow-100 doodly-border slide-in-up delay-3">
+                    <h3 class="text-3xl font-bold mb-2 text-gray-800">Reservations</h3>
+                    <p>Call us to book a table:</p>
+                    <p class="font-extrabold text-2xl text-orange-500">(555) 300-DOODLE</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="text-center p-8 bg-gray-800 text-white mt-12 border-t-4 border-orange-500">
+        <p class="doodle-title text-xl mb-2">© 2025 The Doodly Diner. All rights reserved to be slightly messy.</p>
+        <p class="text-sm text-gray-400">Website designed with a pen, a napkin, and a lot of caffeine.</p>
+    </footer>
+
+   <script src="main.js"></script>
+</body>
+</html>
